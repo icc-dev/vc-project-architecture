@@ -5,8 +5,8 @@
 "name": "Juan",
 "points": 0,
 "lastRequest": "",
-"addedAt": "",
-"updatedAt": "",
-"role": ["Admin", "Mesero", "Cliente"]
+"role": ["Admin", "Mesero", "Cliente"],
+"createdAt": "",
+"updatedAt": ""
 }
 @endjson
