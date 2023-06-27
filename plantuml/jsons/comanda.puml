@@ -1,0 +1,29 @@
+@startjson
+{
+    "_id": "13fa3b21-1210-4cca-8f58-739e642fbcf9",
+    "table": "7d8ee526-17a6-4838-9c5c-a1b628e8aab1",
+    "waiter": "47bab1d0-7851-4bcf-bc86-4f24f2b35f81",
+    "products": ["30206824-bf35-4b16-bd2a-b4816300e1c2"],
+    "combos": ["30206824-bf35-4b16-bd2a-b4816300e1c2"],
+    "dinners": 2,
+    "amount": 2000,
+    "propine": 200,
+    "audit": [
+        {
+            "status": "accepted",
+            "createdAt": "2022-01-01T01:01:01.000Z"
+        },
+        {
+            "status": "finalized",
+            "createdAt": "2022-01-01T01:01:01.000Z"
+        },
+        {
+            "status": "cancelled",
+            "createdAt": "2022-01-01T01:01:01.000Z"
+        }
+    ],
+    "status": "confirmed",
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z"
+}
+@endjson

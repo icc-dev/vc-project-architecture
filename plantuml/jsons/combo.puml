@@ -1,17 +1,17 @@
 @startjson
 {
-"_id": "0276baa8-5769-4747-84a5-4d765d04fc06",
-"name": "Combo Desayuno",
-"descripcion": "",
-"price": 8000,
-"currency": "CLP",
-"products": ["30206824-bf35-4b16-bd2a-b4816300e1c2", "92f5f908-c84c-4702-8a71-023eb4deb2fb"],
-"available": false,
-"rangeTime": [
-{"startTime": "08:00", "endTime": "11:00"}
-],
-"createdAt": "",
-"updatedAt": "",
-"disableAt": ""
+    "_id": "0276baa8-5769-4747-84a5-4d765d04fc06",
+    "name": "Combo Desayuno",
+    "descripcion": "",
+    "price": 8000,
+    "currency": "CLP",
+    "products": ["30206824-bf35-4b16-bd2a-b4816300e1c2", "92f5f908-c84c-4702-8a71-023eb4deb2fb"],
+    "available": false,
+    "rangeTime": [
+        {"startTime": "08:00", "endTime": "11:00"}
+    ],
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "disableAt": "2022-01-01T01:01:01.000Z"
 }
 @endjson

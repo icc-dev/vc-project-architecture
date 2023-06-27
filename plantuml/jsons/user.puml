@@ -1,12 +1,12 @@
 @startjson
 {
-"_id":"512d2775-df50-4d14-a91e-ef066bd1e023",
-"phone": "+569XXXXXXXX",
-"name": "Juan",
-"points": 0,
-"lastRequest": "",
-"role": ["Admin", "Mesero", "Cliente"],
-"createdAt": "",
-"updatedAt": ""
+    "_id":"512d2775-df50-4d14-a91e-ef066bd1e023",
+    "phone": "+569XXXXXXXX",
+    "name": "Juan",
+    "points": 0,
+    "lastRequest": "2022-01-01T01:01:01.000Z",
+    "role": ["Admin", "Mesero", "Cliente"],
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z"
 }
 @endjson

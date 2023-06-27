@@ -1,10 +1,10 @@
 @startjson
 {
-"_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
-"id": "coffe",
-"name": "Cafe",
-"createdAt": "",
-"updatedAt": "",
-"visible": true
+    "_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
+    "id": "coffe",
+    "name": "Cafe",
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "visible": true
 }
 @endjson

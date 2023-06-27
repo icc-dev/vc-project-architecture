@@ -1,30 +1,32 @@
 @startjson
 {
-"_id":"62b2ed97-e443-4593-8bf9-f383df1a805a",
-"userId": "512d2775-df50-4d14-a91e-ef066bd1e023",
-"signMethod": ["email", "phone"],
-"isDisable": false,
-"credentials" : [
-{
-"key": "email@domain.com",
-"method": "email",
-"password": "89e01536...b0d6062ca9b8f56767c8",
-"hashMethod": "SHA256",
-"active": true,
-"reason": null,
-"createdAt": "2020-01-01"
-},
-{
-"key": "+56911111111",
-"method": "phone",
-"password": "89e01536...b0d6062ca9b8f56767c8",
-"hashMethod": "SHA256",
-"active": false,
-"reason": "Change sign method",
-"disabledAt": "2020-02-01"
-}
-],
-"updatedAt": "2020-02-01",
-"createdAt": "2020-01-01"
+    "_id":"62b2ed97-e443-4593-8bf9-f383df1a805a",
+    "user": "512d2775-df50-4d14-a91e-ef066bd1e023",
+    "signMethod": ["email", "phone"],
+    "isDisable": false,
+    "credentials" : [
+        {
+            "key": "email@domain.com",
+            "method": "email",
+            "password": "89e01536...b0d6062ca9b8f56767c8",
+            "hashMethod": "SHA256",
+            "active": true,
+            "reason": null,
+            "createdAt": "2022-01-01T01:01:01.000Z",
+            "disabledAt": null
+        },
+        {
+            "key": "+56911111111",
+            "method": "phone",
+            "password": "89e01536...b0d6062ca9b8f56767c8",
+            "hashMethod": "SHA256",
+            "active": false,
+            "reason": "Change sign method",
+            "createdAt": "2022-01-01T01:01:01.000Z",
+            "disabledAt": "2022-02-01T01:01:01.000Z"
+        }
+    ],
+    "updatedAt": "2022-02-01T01:01:01.000Z",
+    "createdAt": "2022-01-01T01:01:01.000Z"
 }
 @endjson

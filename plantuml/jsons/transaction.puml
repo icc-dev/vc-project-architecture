@@ -1,0 +1,13 @@
+@startjson
+{
+    "_id": "29be1d3b-b191-4ec5-8055-b1b7bf70736e",
+    "comanda": "13fa3b21-1210-4cca-8f58-739e642fbcf9",
+    "subTotal": 2000,
+    "propine": 200,
+    "total": 2200,
+    "authCode": 21111,
+    "method": "Credit",
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z"
+}
+@endjson
