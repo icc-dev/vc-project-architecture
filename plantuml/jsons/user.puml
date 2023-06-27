@@ -1,0 +1,12 @@
+@startjson
+{
+"_id":"512d2775-df50-4d14-a91e-ef066bd1e023",
+"phone": "+569XXXXXXXX",
+"name": "Juan",
+"points": 0,
+"lastRequest": "",
+"addedAt": "",
+"updatedAt": "",
+"role": ["Admin", "Mesero", "Cliente"]
+}
+@endjson
