@@ -1,0 +1,48 @@
+@startuml auth-signup
+!theme blueprint
+autonumber
+actor "Client" as CLIENT
+participant "icc-vc-project-auth" as APIAUTH <<Monolithic API>>
+participant "Firebase Auth" as FIREBASEAUTH <<External provider>>
+participant "MongoDB" as MONGO <<External provider>>
+participant "Redis" as REDIS <<Memory cache>>
+CLIENT -> APIAUTH : POST v1/signup
+activate APIAUTH
+APIAUTH -> FIREBASEAUTH : POST signup
+activate FIREBASEAUTH
+note over APIAUTH, FIREBASEAUTH: /v1/accounts:signUp?key=[API_KEY]
+alt success signup 
+    FIREBASEAUTH --> APIAUTH: 200 OK
+    APIAUTH -> REDIS: save idToken of user
+    activate REDIS
+    REDIS --> APIAUTH: OK
+    deactivate REDIS
+    APIAUTH -> MONGO: save client data
+    activate MONGO
+    MONGO --> APIAUTH: client data saved
+    deactivate MONGO
+    APIAUTH --> CLIENT: return 201 with idToken
+    note left of APIAUTH
+        {
+            "idToken": "[ID_TOKEN]",
+            "email": "[user@example.com]",
+            "refreshToken": "[REFRESH_TOKEN]",
+            "expiresIn": "3600",
+            "localId": "tRcfmLH7..."
+        }
+    end note
+else error signup
+    FIREBASEAUTH --> APIAUTH: Error
+    deactivate FIREBASEAUTH
+    APIAUTH --> CLIENT: return status code
+    deactivate APIAUTH
+    note left of APIAUTH
+        EMAIL_EXISTS: 412
+        OPERATION_NOT_ALLOWED: 412
+        TOO_MANY_ATTEMPTS_TRY_LATER: 500
+    end note
+end
+footer @devicc 2023
+header icc-vc-project
+title SignUp Sequence
+@enduml
