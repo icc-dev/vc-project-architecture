@@ -9,6 +9,9 @@
 "currency": "CLP",
 "imgPath": "",
 "relatedProducts": ["2fb16a19-b222-45e4-9d7d-5f09b0845682", "f232f53e-d0db-4497-9e30-02550ed5c968"],
-"category": ["coffe"]
+"category": ["coffe"],
+"createdAt": "",
+"updatedAt": "",
+"disableAt": ""
 }
 @endjson
