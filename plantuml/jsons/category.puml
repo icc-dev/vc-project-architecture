@@ -2,6 +2,9 @@
 {
 "_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
 "id": "coffe",
-"name": "Cafe"
+"name": "Cafe",
+"createdAt": "",
+"updatedAt": "",
+"visible": true
 }
 @endjson
