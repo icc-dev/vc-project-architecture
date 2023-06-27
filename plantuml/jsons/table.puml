@@ -1,0 +1,12 @@
+@startjson
+{
+"_id": "7d8ee526-17a6-4838-9c5c-a1b628e8aab1",
+"name": "Mesa vista hermosa",
+"number": 1,
+"places": 4,
+"available": true,
+"createdAt": "",
+"updatedAt": "",
+"disableAt": ""
+}
+@endjson
