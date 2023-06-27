@@ -137,4 +137,6 @@ json transactions {
     "createdAt": "2022-01-01T01:01:01.000Z",
     "updatedAt": "2022-01-01T01:01:01.000Z"
 }
+footer @devicc
+header icc-vc-project
 @enduml
