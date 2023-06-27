@@ -1,0 +1,71 @@
+@startuml
+!theme blueprint
+left to right direction
+allowmixing
+
+actor :Cliente: as cliente
+actor :Guest: as anon
+actor :Mesero: as mesero
+actor :Administrador: as admin
+
+anon <|-- cliente
+
+rectangle Administracion {
+    usecase CRUDP as "Administrar productos
+    --
+    Incluye operaciones CRUD
+    "
+
+    usecase CRUDM as "Administrar mesas
+    --
+    Incluye operaciones CRUD
+    "
+    usecase "Visualizar transacciones" as VISUALIZADORTXR
+    usecase "Visualizar comandas" as VISUALIZADORCOMANDAS
+}
+admin --> VISUALIZADORTXR
+admin --> VISUALIZADORCOMANDAS
+admin --> CRUDP
+admin --> CRUDM
+
+
+rectangle Backoffice {
+    usecase "Notificación QR leido" as NOTIFICACIONQR
+    usecase "Confirmar pedido" as CONFIRMARPEDIDO
+}
+mesero --> NOTIFICACIONQR
+mesero --> CONFIRMARPEDIDO
+
+rectangle transaccion {
+    usecase "Visualizar boleta" as VISUALIZARBOLETA
+    usecase "Confirmar pago" as CONFIRMARPAGO
+    rectangle Comanda {
+        usecase "Finalizar Comanda" as FINALIZARCOMANDA
+        usecase "Escanear QR" as ESCANEARQR
+        usecase "Seleccionar productos" as SELECCIONARPRODUCTOS
+    }
+}
+mesero --> FINALIZARCOMANDA
+mesero --> CONFIRMARPAGO
+
+rectangle fidelizacion {
+    usecase "Visualizar pedidos" as VISUALIZARPEDIDOS
+    usecase "Ver detalle" as VERDETALLEPEDIDO
+    usecase "Acomulacion puntos" as ACOMULACIONPUNTOS
+    usecase "Registro" as REGISTRO
+    usecase "Login" as LOGIN
+    usecase "Auth" as AUTH
+}
+AUTH -down.> LOGIN : <<extends>>
+AUTH -down.> REGISTRO : <<extends>>
+VISUALIZARPEDIDOS .> VERDETALLEPEDIDO : <<extends>>
+
+anon --> ESCANEARQR
+anon --> SELECCIONARPRODUCTOS
+cliente --> VISUALIZARBOLETA
+cliente --> VISUALIZARPEDIDOS
+cliente --> ACOMULACIONPUNTOS
+cliente --> AUTH
+
+
+@enduml
