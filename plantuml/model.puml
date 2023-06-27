@@ -1,0 +1,140 @@
+@startuml
+allowmixing
+json category {
+    "_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
+    "id": "coffe",
+    "name": "Cafe",
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "visible": true
+}
+json user {
+    "_id":"512d2775-df50-4d14-a91e-ef066bd1e023",
+    "phone": "+569XXXXXXXX",
+    "name": "Juan",
+    "points": 0,
+    "lastRequest": "2022-01-01T01:01:01.000Z",
+    "role": ["Admin", "Mesero", "Cliente"],
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z"
+}
+json user_sign {
+    "_id":"62b2ed97-e443-4593-8bf9-f383df1a805a",
+    "user": "512d2775-df50-4d14-a91e-ef066bd1e023",
+    "signMethod": ["email", "phone"],
+    "isDisable": false,
+    "credentials" : [
+        {
+            "key": "email@domain.com",
+            "method": "email",
+            "password": "89e01536...b0d6062ca9b8f56767c8",
+            "hashMethod": "SHA256",
+            "active": true,
+            "reason": null,
+            "createdAt": "2022-01-01T01:01:01.000Z",
+            "disabledAt": null
+        },
+        {
+            "key": "+56911111111",
+            "method": "phone",
+            "password": "89e01536...b0d6062ca9b8f56767c8",
+            "hashMethod": "SHA256",
+            "active": false,
+            "reason": "Change sign method",
+            "createdAt": "2022-01-01T01:01:01.000Z",
+            "disabledAt": "2022-02-01T01:01:01.000Z"
+        }
+    ],
+    "updatedAt": "2022-02-01T01:01:01.000Z",
+    "createdAt": "2022-01-01T01:01:01.000Z"
+}
+json table {
+    "_id": "7d8ee526-17a6-4838-9c5c-a1b628e8aab1",
+    "name": "Mesa vista hermosa",
+    "number": 1,
+    "places": 4,
+    "available": true,
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "disableAt": "2022-01-01T01:01:01.000Z"
+}
+json table_waiter {
+    "_id": "0276baa8-5769-4747-84a5-4d765d04fc06",
+    "table": "7d8ee526-17a6-4838-9c5c-a1b628e8aab1",
+    "waiter": "47bab1d0-7851-4bcf-bc86-4f24f2b35f81",
+    "validDate": "2022-01-03",
+    "transactions": ["e6be8e6f-b5fe-4bb9-84f6-ee34653681d6", "4efc67e8-4380-42b9-bca8-69ebf45a9b0f"],
+    "amountSold": 2000,
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "disableAt": "2022-01-01T01:01:01.000Z"
+}
+json product {
+    "_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
+    "productName": "Cafe cortado",
+    "available": true,
+    "price": 2000,
+    "offerPrice": 1980,
+    "offerAvailable": false,
+    "currency": "CLP",
+    "imgPath": "",
+    "relatedProducts": ["2fb16a19-b222-45e4-9d7d-5f09b0845682", "f232f53e-d0db-4497-9e30-02550ed5c968"],
+    "category": ["coffe"],
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "disableAt": "2022-01-01T01:01:01.000Z"
+}
+json combo {
+    "_id": "0276baa8-5769-4747-84a5-4d765d04fc06",
+    "name": "Combo Desayuno",
+    "descripcion": "",
+    "price": 8000,
+    "currency": "CLP",
+    "products": ["30206824-bf35-4b16-bd2a-b4816300e1c2", "92f5f908-c84c-4702-8a71-023eb4deb2fb"],
+    "available": false,
+    "rangeTime": [
+        {"startTime": "08:00", "endTime": "11:00"}
+    ],
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z",
+    "disableAt": "2022-01-01T01:01:01.000Z"
+}
+json comanda {
+    "_id": "13fa3b21-1210-4cca-8f58-739e642fbcf9",
+    "table": "7d8ee526-17a6-4838-9c5c-a1b628e8aab1",
+    "waiter": "47bab1d0-7851-4bcf-bc86-4f24f2b35f81",
+    "products": ["30206824-bf35-4b16-bd2a-b4816300e1c2"],
+    "combos": ["30206824-bf35-4b16-bd2a-b4816300e1c2"],
+    "dinners": 2,
+    "amount": 2000,
+    "propine": 200,
+    "audit": [
+        {
+            "status": "accepted",
+            "createdAt": "2022-01-01T01:01:01.000Z"
+        },
+        {
+            "status": "finalized",
+            "createdAt": "2022-01-01T01:01:01.000Z"
+        },
+        {
+            "status": "cancelled",
+            "createdAt": "2022-01-01T01:01:01.000Z"
+        }
+    ],
+    "status": "confirmed",
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z"
+}
+json transactions {
+    "_id": "29be1d3b-b191-4ec5-8055-b1b7bf70736e",
+    "comanda": "13fa3b21-1210-4cca-8f58-739e642fbcf9",
+    "subTotal": 2000,
+    "propine": 200,
+    "total": 2200,
+    "authCode": 21111,
+    "method": "Credit",
+    "createdAt": "2022-01-01T01:01:01.000Z",
+    "updatedAt": "2022-01-01T01:01:01.000Z"
+}
+@enduml
