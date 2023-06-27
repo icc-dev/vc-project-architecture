@@ -1,0 +1,13 @@
+@startjson
+{
+"_id": "0276baa8-5769-4747-84a5-4d765d04fc06",
+"tableId": "60d75425-862e-481c-8402-798d97d7c8a5",
+"waiterId": "47bab1d0-7851-4bcf-bc86-4f24f2b35f81",
+"validDate": "2022-01-03",
+"transactions": ["e6be8e6f-b5fe-4bb9-84f6-ee34653681d6", "4efc67e8-4380-42b9-bca8-69ebf45a9b0f"],
+"amountSold": 2000,
+"createdAt": "",
+"updatedAt": "",
+"disableAt": ""
+}
+@endjson
