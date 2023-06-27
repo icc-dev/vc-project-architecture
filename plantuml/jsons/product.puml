@@ -1,0 +1,14 @@
+@startjson
+{
+"_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
+"productName": "Cafe cortado",
+"available": true,
+"price": 2000,
+"offerPrice": 1980,
+"offerAvailable": false,
+"currency": "CLP",
+"imgPath": "",
+"relatedProducts": ["2fb16a19-b222-45e4-9d7d-5f09b0845682", "f232f53e-d0db-4497-9e30-02550ed5c968"],
+"category": ["coffe"]
+}
+@endjson
