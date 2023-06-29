@@ -6,37 +6,35 @@ actor "Client\nor\nGuest" as CLIENT
 participant "icc-vc-project-products" as APIPRODUCT <<Monolithic API>>
 participant "icc-vc-project-comanda" as APICOMANDA <<Monolithic API>>
 participant "MongoDB" as MONGO <<External provider>>
+participant "Redis" as REDIS <<External provider>>
 
-== Escanear QR ==
+title Escanear QR
 CLIENT -> APICOMANDA : Escanear QR
 APICOMANDA -> MONGO : Buscar mesa por QRCode
 alt available
-MONGO --> APICOMANDA: Retorna informacion de\nmesa y mesero
+MONGO --> APICOMANDA : Retorna informacion de\nmesa y mesero
+APICOMANDA -> REDIS : Se inicia comanada
 APICOMANDA -> APICOMANDA : Notificar a mesero QR leido
 else not available
-
+APICOMANDA -> MONGO : Registrar Error
+APICOMANDA --> CLIENT : Retorna mesa no habilitada
 end
 
-== Obtener productos ==
+newpage Obtener productos
 CLIENT -> APIPRODUCT : GET /v1/product
 APIPRODUCT -> MONGO : Get paginated products
 MONGO --> APIPRODUCT : Return products
 APIPRODUCT --> CLIENT : Return products
 
-== Iniciar Comanda ==
-CLIENT -> APICOMANDA : POST /v1/create
-APICOMANDA -> MONGO : Iniciar comanda
-MONGO --> APICOMANDA : Retornar comanda
-APICOMANDA -> APICOMANDA : Notificar nueva comanda
+newpage Actualizar Comanda
+CLIENT -> APICOMANDA : PUT /v1/comanda
+APICOMANDA -> REDIS : Actualiza comanda
+APICOMANDA -> APICOMANDA : Retornar comanda
+APICOMANDA -> APICOMANDA : Notificar actualización comanda
 APICOMANDA --> CLIENT : Retornar comanda
 
-== Agregar productos ==
-
-
-footer @devicc 2023
+footer @devicc 2023 Page %page% of %lastpage%
 header icc-vc-project
-title Create Order Sequence
-!theme blueprint
-
+' !theme blueprint
 
 @enduml
