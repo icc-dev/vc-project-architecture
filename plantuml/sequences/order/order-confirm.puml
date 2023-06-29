@@ -1,0 +1,27 @@
+@startuml order-confirm
+autonumber
+
+actor "Mesero" as MESERO
+
+title Confirmar Comanda
+
+participant "icc-vc-project-comanda" as APICOMANDA <<Monolithic API>>
+participant "MongoDB" as MONGO <<External provider>>
+participant "Redis" as REDIS <<External provider>>
+
+
+MESERO -> APICOMANDA : PUT /v1/comanda
+APICOMANDA -> REDIS : Obtener comanda
+REDIS --> APICOMANDA : Retornar comanda
+APICOMANDA -> APICOMANDA : Confirmar comanda
+APICOMANDA -> MONGO : Guardar comanda
+MONGO --> APICOMANDA : Retornar comanda guardada
+APICOMANDA -> REDIS : Eliminar comanda cache
+
+APICOMANDA --> MESERO : Devolver status comanda
+
+footer @devicc 2023 Page %page% of %lastpage%
+header icc-vc-project
+' !theme blueprint
+
+@enduml
