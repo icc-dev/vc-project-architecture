@@ -1,0 +1,42 @@
+@startuml refresh-token
+autonumber
+
+actor "Client\nor\nGuest" as CLIENT
+
+participant "icc-vc-project-products" as APIPRODUCT <<Monolithic API>>
+participant "icc-vc-project-comanda" as APICOMANDA <<Monolithic API>>
+participant "MongoDB" as MONGO <<External provider>>
+
+== Escanear QR ==
+CLIENT -> APICOMANDA : Escanear QR
+APICOMANDA -> MONGO : Buscar mesa por QRCode
+alt available
+MONGO --> APICOMANDA: Retorna informacion de\nmesa y mesero
+APICOMANDA -> APICOMANDA : Notificar a mesero QR leido
+else not available
+
+end
+
+== Obtener productos ==
+CLIENT -> APIPRODUCT : GET /v1/product
+APIPRODUCT -> MONGO : Get paginated products
+MONGO --> APIPRODUCT : Return products
+APIPRODUCT --> CLIENT : Return products
+
+== Iniciar Comanda ==
+CLIENT -> APICOMANDA : POST /v1/create
+APICOMANDA -> MONGO : Iniciar comanda
+MONGO --> APICOMANDA : Retornar comanda
+APICOMANDA -> APICOMANDA : Notificar nueva comanda
+APICOMANDA --> CLIENT : Retornar comanda
+
+== Agregar productos ==
+
+
+footer @devicc 2023
+header icc-vc-project
+title Create Order Sequence
+!theme blueprint
+
+
+@enduml
