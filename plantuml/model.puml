@@ -1,4 +1,5 @@
-@startuml
+@startuml json
+!theme blueprint
 allowmixing
 json category {
     "_id": "30206824-bf35-4b16-bd2a-b4816300e1c2",
